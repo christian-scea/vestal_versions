@@ -36,7 +36,7 @@ module VestalVersions
 
         # Creates an initial version upon creation of the parent record.
         def create_initial_version
-          versions.create(version_attributes.merge(:number => 1))
+          versions.create(version_attributes.merge(:numb => 1))
           reset_version_changes
           reset_version
         end
@@ -86,7 +86,7 @@ module VestalVersions
         # Specifies the attributes used during version creation. This is separated into its own
         # method so that it can be overridden by the VestalVersions::Users feature.
         def version_attributes
-          {:modifications => version_changes, :number => last_version + 1}
+          {:modifications => version_changes, :numb => last_version + 1}
         end
     end
   end
